@@ -17,7 +17,19 @@
 		<a href="posts/{{$post->id}}">{{ $post->title }}</a>
 	</h2>
 	<p>{{ substr($post->body, 0, 140) }}...</p>
-	<small> <em>Written by <strong>{{ $post->user->name }} </strong> </em> {{ $post->created_at->diffForHumans() }}</small>
+	
+	@if($post->was_updated)
+		<small>
+			Updated by <strong>{{ $post->user->name }}</strong>
+			{{ $post->updated_at->diffForHumans() }} 
+		</small>
+	@else
+		<small>
+			Written by <strong>{{ $post->user->name }}</strong>
+			{{ $post->created_at->diffForHumans() }} 
+		</small>
+	@endif
+	
 	<hr>
 
 	@endforeach

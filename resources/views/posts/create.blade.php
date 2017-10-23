@@ -10,7 +10,7 @@
 		@include('posts.form')
 	{!! Form::close() !!}
 
-	<a href="../posts">Back</a>
+	<a href="/">Cancel</a>
 </div>
 
 @stop

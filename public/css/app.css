@@ -8385,3 +8385,27 @@ button.close {
   padding: 8px 15px;
 }
 
+.buttons-dash {
+  padding-bottom: 25px;
+}
+
+.buttons-dash #edit-button {
+  border: 1px solid #3097D1;
+  border-radius: 5px;
+  background: #3097D1;
+  color: white;
+  padding: 10px 15px;
+}
+
+.buttons-dash #delete-button {
+  border: 1px solid #bf5329;
+  border-radius: 5px;
+  background: #bf5329;
+  color: white;
+  padding: 8px 15px;
+}
+
+.dashboard li {
+  list-style: none;
+}
+

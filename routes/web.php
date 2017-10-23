@@ -13,6 +13,7 @@
 
 Route::get('/pages/about', 'PagesController@getAbout');
 Route::get('/pages/contact', 'PagesController@getContact');
+Route::get('/dashboard', 'PagesController@getDashboard');
 
 Route::resource('posts', 'PostsController');
 

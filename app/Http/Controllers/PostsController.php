@@ -12,7 +12,6 @@ use Auth;
 class PostsController extends Controller
 {
 
-
 	public function __construct() {
 		$this->middleware('auth', ['except' => ['index', 'show']]);
 	}
@@ -87,6 +86,8 @@ class PostsController extends Controller
 		$post->title = $request->title;
 		
 		$post->body = $request->body;
+
+		$post->was_updated = true;
 
 		$post->save();
 
