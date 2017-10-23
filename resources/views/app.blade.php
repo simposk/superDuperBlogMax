@@ -10,7 +10,8 @@
         <link href="{{ URL::asset('css/app.css') }}" rel="stylesheet">
         
     <body>
-        @include('partials.nav');
+        @include('partials._nav');
+        @include('partials._messages');
 
         <div class="container">
             @yield('content')

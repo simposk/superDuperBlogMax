@@ -8355,18 +8355,6 @@ button.close {
   line-height: 30px;
 }
 
-.delete {
-  padding: 0;
-  background: transparent;
-  color: #bf5329;
-  border: none;
-  display: inline-block;
-}
-
-.delete:hover {
-  text-decoration: underline;
-}
-
 .logout {
   padding: 0;
   background: transparent;
@@ -8374,5 +8362,26 @@ button.close {
   font-size: 15px;
   margin-top: 10px;
   color: grey;
+}
+
+.buttons {
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+.buttons #edit-button {
+  border: 1px solid #3097D1;
+  border-radius: 5px;
+  background: #3097D1;
+  color: white;
+  padding: 10px 15px;
+}
+
+.buttons #delete-button {
+  border: 1px solid #bf5329;
+  border-radius: 5px;
+  background: #bf5329;
+  color: white;
+  padding: 8px 15px;
 }
 

@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Session;
 use Auth;
-use Carbon\Carbon;
+
 
 
 class PostsController extends Controller
 {
+
 
 	public function __construct() {
 		$this->middleware('auth', ['except' => ['index', 'show']]);
@@ -27,6 +29,7 @@ class PostsController extends Controller
 		// check if user logged in
 
 		if(!Auth::check()) {
+			Session::flash('danger', 'You need to log in');
 			return redirect()->route('login');
 		}
 
@@ -42,7 +45,11 @@ class PostsController extends Controller
 		$post = new Post($request->all());
 
 		$post->user_id = Auth::id();
+
 		$post->save();
+
+        Session::flash('success', 'Your post was successfully created!');
+
 		return redirect()->route('posts.show', [$post->id]);
 	}
 
@@ -58,6 +65,7 @@ class PostsController extends Controller
 
 
 		if(!$post->ownedBy(Auth::user())) {
+			Session::flash('danger', 'You don\'t have permission to do that!');
 			return redirect()->route('posts.show', [$post->id]);
 		}
 
@@ -82,6 +90,8 @@ class PostsController extends Controller
 
 		$post->save();
 
+        Session::flash('success', 'Your post was successfully updated.');
+
 		return redirect()->route('posts.show', [$post->id]);
 	}
 
@@ -90,13 +100,23 @@ class PostsController extends Controller
             return respone(['message' => 'No way.'], 403);
         }   
 
+		Session::flash('danger', 'You don\'t have permission to do that!');
         return redirect()->route('posts.index');
 	}
 
 
 	public function destroy($id) {
 		$post = Post::find($id);
+
+		if (!$post->ownedBy(Auth::user())) {
+            Session::flash('danger', 'You don\'t have permission to do that!');
+            return redirect()->route('posts.show', [$post->id]);
+        }
+
 		$post->delete();
+
+        Session::flash('success', 'Your post was successfully deleted.');
+
 		return redirect()->route('posts.index');
 	}
 

@@ -17,7 +17,7 @@
 		<a href="posts/{{$post->id}}">{{ $post->title }}</a>
 	</h2>
 	<p>{{ substr($post->body, 0, 140) }}...</p>
-	<small> <em>Written by <strong>{{ $post->user->name }} </strong>  on</em> {{ $post->created_at->diffForHumans() }}</small>
+	<small> <em>Written by <strong>{{ $post->user->name }} </strong> </em> {{ $post->created_at->diffForHumans() }}</small>
 	<hr>
 
 	@endforeach

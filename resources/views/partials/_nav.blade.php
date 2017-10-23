@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="../posts">Blog</a>
+          <a class="navbar-brand" href="/">Blog</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           @if(Auth::check())
