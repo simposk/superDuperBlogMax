@@ -1,0 +1,37 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+.post_text {
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.delete {
+	padding: 0;
+	background: transparent;
+	color: #bf5329;
+	border: none;
+	display: inline-block;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.logout {
+	padding: 0;
+	background: transparent;
+	border: none;
+	// display: inline-block;
+	font-size: 15px;
+	margin-top: 10px;
+	color: grey; 
+}
